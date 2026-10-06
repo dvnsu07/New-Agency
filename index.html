@@ -3,55 +3,200 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Marketing Agency</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; }
-    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: #1e293b; }
-    .logo { font-size: 1.5rem; font-weight: bold; color: #38bdf8; }
-    nav a { color: #f8fafc; text-decoration: none; margin-left: 20px; font-weight: 500; }
-    .hero { text-align: center; padding: 100px 20px; background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%); }
-    .hero h1 { font-size: 3rem; margin-bottom: 20px; color: #ffffff; }
-    .hero p { font-size: 1.2rem; color: #94a3b8; max-width: 600px; margin: 0 auto 30px; }
-    .btn { background: #38bdf8; color: #0f172a; padding: 12px 28px; text-decoration: none; font-weight: bold; border-radius: 6px; display: inline-block; }
-    .services { padding: 80px 5%; text-align: center; }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
-    .card { background: #1e293b; padding: 30px; border-radius: 8px; border: 1px solid #334155; }
-    .card h3 { color: #38bdf8; margin-bottom: 10px; }
-  </style>
+  
+  <!-- SEO Meta Tags -->
+  <title>Bridge the Growth | Premium Performance Marketing & Business Consulting Agency</title>
+  <meta name="description" content="Bridge the Growth delivers data-driven digital marketing, SEO, Google & Meta Ads, business analytics, and high-converting web development to scale your revenue.">
+  <meta name="keywords" content="SEO, Performance Marketing, Google Ads, Meta Ads, Social Media Optimization, Business Consulting, Business Data Analysis, Content Marketing, Email Marketing, Web Development">
+  <meta name="author" content="Bridge the Growth">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- Navigation Header -->
   <header>
-    <div class="logo">New-Agency</div>
+    <div class="logo">Bridge the <span>Growth</span></div>
     <nav>
-      <a href="#services">Services</a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#services">Services</a>
+      <a href="#consulting">Consulting</a>
+      <a href="#contact" onclick="openContactModal()">Contact</a>
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>Grow Your Business Online</h1>
-    <p>We craft data-driven digital marketing strategies that boost traffic, generate leads, and scale revenues.</p>
-    <a href="#contact" class="btn">Get Started</a>
+    <div class="badge">Enterprise Digital Growth</div>
+    <h1>Data-Driven Strategies Built to Scale Your Revenue</h1>
+    <p>We connect high-intent marketing with advanced business intelligence. From technical SEO to performance ads, we bridge the gap between traffic and measurable growth.</p>
+    <button class="btn-primary" onclick="openContactModal()">Schedule Strategy Call</button>
   </section>
 
-  <section class="services" id="services">
-    <h2>Our Marketing Services</h2>
-    <div class="services-grid">
-      <div class="card">
-        <h3>SEO Optimization</h3>
-        <p>Rank higher on search engines and attract organic potential customers.</p>
-      </div>
-      <div class="card">
-        <h3>Social Media Marketing</h3>
-        <p>Engage your target audience across top platforms like Instagram and LinkedIn.</p>
-      </div>
-      <div class="card">
-        <h3>PPC Advertising</h3>
-        <p>Run targeted ad campaigns that generate immediate ROI and quality leads.</p>
-      </div>
+  <!-- About Section -->
+  <section class="container" id="about">
+    <div class="about-card">
+      <span class="sub-heading">The Agency Strategy</span>
+      <h2>Engineering Sustainable Revenue Engines</h2>
+      <p>At <strong>Bridge the Growth</strong>, we combine growth marketing precision with full-funnel business data analysis. We don't just generate clicks—we architect complete systems that turn target audiences into long-term enterprise value.</p>
     </div>
   </section>
+
+  <!-- Services Grid Section -->
+  <section class="container" id="services">
+    <div class="section-header">
+      <span class="sub-heading">Capabilities</span>
+      <h2>Comprehensive Marketing & Consulting Solutions</h2>
+    </div>
+
+    <div class="grid">
+      <!-- Service 1 -->
+      <article class="card">
+        <div class="card-icon">📈</div>
+        <h3>Search Engine Optimization (SEO)</h3>
+        <p>Dominate high-intent search rankings through deep technical audits, content architecture, keyword mapping, and sustainable organic growth engines.</p>
+      </article>
+
+      <!-- Service 2 -->
+      <article class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Performance Marketing</h3>
+        <p>Full-funnel campaign architectures designed for maximum Return on Ad Spend (ROAS), customer acquisition precision, and scale.</p>
+      </article>
+
+      <!-- Service 3 -->
+      <article class="card">
+        <div class="card-icon">🚀</div>
+        <h3>Google Ads & Meta Ads</h3>
+        <p>Hyper-targeted paid search and dynamic social ad campaigns across Google, Instagram, and Facebook backed by real-time bid optimization.</p>
+      </article>
+
+      <!-- Service 4 -->
+      <article class="card">
+        <div class="card-icon">📲</div>
+        <h3>Social Media Optimization (SMO)</h3>
+        <p>Build platform presence, strengthen brand identity, and cultivate dynamic community engagement across all core social ecosystems.</p>
+      </article>
+
+      <!-- Service 5 -->
+      <article class="card">
+        <div class="card-icon">💼</div>
+        <h3>Business Consulting</h3>
+        <p>Strategic advisory on market expansion, unit economics, conversion funnels, and operational scaling tailored to your business model.</p>
+      </article>
+
+      <!-- Service 6 -->
+      <article class="card">
+        <div class="card-icon">📊</div>
+        <h3>Business Data Analysis</h3>
+        <p>Transform raw analytics into actionable insights. We build custom dashboards, tracking setups, and attribution models for total clarity.</p>
+      </article>
+
+      <!-- Service 7 -->
+      <article class="card">
+        <div class="card-icon">✍️️</div>
+        <h3>Content & Email Marketing</h3>
+        <p>High-converting messaging strategies, multi-stage automated email sequences, and authority content designed to nurture qualified leads.</p>
+      </article>
+
+      <!-- Service 8 -->
+      <article class="card">
+        <div class="card-icon">💻</div>
+        <h3>Web Development</h3>
+        <p>Lightning-fast, ultra-responsive, and conversion-focused websites custom-engineered using modern web standards for maximum impact.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">Bridge the <span>Growth</span></div>
+        <p>Accelerating business trajectory through intelligent growth engines.</p>
+      </div>
+      <div class="footer-info">
+        <p><strong>Email:</strong> contact@bridgethegrowth.com</p>
+        <p><strong>Location:</strong> Global Operations / Remote Executive Suite</p>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2026 Bridge the Growth. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Floating Persistent CTA Button -->
+  <button class="floating-cta" onclick="openContactModal()" aria-label="Open Action Menu">
+    To Action
+  </button>
+
+  <!-- Contact & Service Request Modal Overlay -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeContactModal()">&times;</button>
+      <h2>Bridge the Growth</h2>
+      <p class="modal-sub">Select the services you require and send us your project details directly.</p>
+
+      <form onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="senderName" required placeholder="Full Name">
+        </div>
+
+        <div class="form-group">
+          <label>Your Business Email</label>
+          <input type="email" id="senderEmail" required placeholder="name@company.com">
+        </div>
+
+        <div class="form-group">
+          <label>Select Required Service(s)</label>
+          <select id="serviceSelect" required>
+            <option value="" disabled selected>Choose a primary service...</option>
+            <option value="SEO">Search Engine Optimization (SEO)</option>
+            <option value="Performance Marketing">Performance Marketing</option>
+            <option value="Google & Meta Ads">Google Ads & Meta Ads</option>
+            <option value="SMO">Social Media Optimization (SMO)</option>
+            <option value="Business Consulting">Business Consulting</option>
+            <option value="Data Analysis">Business Data Analysis</option>
+            <option value="Content & Email Marketing">Content & Email Marketing</option>
+            <option value="Web Development">Web Development</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Project Overview</label>
+          <textarea id="projectDetails" rows="4" required placeholder="Describe your business goals..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%;">Submit & Send Inquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript for Interactions -->
+  <script>
+    function openContactModal() {
+      document.getElementById('contactModal').classList.add('active');
+    }
+
+    function closeContactModal() {
+      document.getElementById('contactModal').classList.remove('active');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('senderName').value;
+      const email = document.getElementById('senderEmail').value;
+      const service = document.getElementById('serviceSelect').value;
+      const details = document.getElementById('projectDetails').value;
+
+      // Opens default mail client pre-filled with form data
+      const mailtoLink = `mailto:contact@bridgethegrowth.com?subject=Inquiry for ${encodeURIComponent(service)} - ${encodeURIComponent(name)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\nService Selected: " + service + "\n\nDetails:\n" + details)}`;
+      
+      window.location.href = mailtoLink;
+      closeContactModal();
+    }
+  </script>
 </body>
 </html>
