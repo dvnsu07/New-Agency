@@ -1,204 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO Meta Tags -->
-  <title>Bridge the Growth | Premium Performance Marketing & Business Consulting Agency</title>
-  <meta name="description" content="Bridge the Growth delivers data-driven digital marketing, SEO, Google & Meta Ads, business analytics, and high-converting web development to scale your revenue.">
-  <meta name="keywords" content="SEO, Performance Marketing, Google Ads, Meta Ads, Social Media Optimization, Business Consulting, Business Data Analysis, Content Marketing, Email Marketing, Web Development">
-  <meta name="author" content="Bridge the Growth">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge the Growth | Enterprise Digital Architecture & Growth</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        onyx: '#080C14',
+                        'onyx-card': '#0D131F',
+                        'onyx-border': 'rgba(255, 255, 255, 0.08)',
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            900: '#064e3b'
+                        }
+                    },
+                    fontFamily: {
+                        syne: ['Syne', 'sans-serif'],
+                        jakarta: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #080C14;
+            color: #F3F4F6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+        h1, h2, h3, .font-syne {
+            font-family: 'Syne', sans-serif;
+        }
+
+        /* Glowing Effects */
+        .emerald-glow {
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.25);
+        }
+
+        .emerald-glow-strong {
+            box-shadow: 0 0 35px rgba(16, 185, 129, 0.5);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Smooth Gradient Backgrounds */
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 20%, rgba(16, 185, 129, 0.15) 0%, rgba(8, 12, 20, 1) 70%);
+        }
+
+        .card-gradient {
+            background: linear-gradient(145deg, rgba(13, 19, 31, 0.9) 0%, rgba(8, 12, 20, 0.95) 100%);
+        }
+
+        /* Hover Transitions */
+        .service-card {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 12px 30px -10px rgba(16, 185, 129, 0.2);
+        }
+
+        /* Accordion Custom Styling */
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Modal Animation */
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .modal-animate {
+            animation: modalFadeIn 0.3s ease-out forwards;
+        }
+    </style>
 </head>
-<body>
+<body class="antialiased selection:bg-emerald-500 selection:text-black">
 
-  <!-- Navigation Header -->
-  <header>
-    <div class="logo-container">
-  <img src="B2G.jpeg" alt="Bridge the Growth" class="nav-logo">
-</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#consulting">Consulting</a>
-      <a href="#contact" onclick="openContactModal()">Contact</a>
-    </nav>
-  </header>
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-onyx/90 backdrop-blur-md border-b border-onyx-border px-6 lg:px-16 py-4 flex items-center justify-between transition-all">
+        <!-- Logo Badge Container -->
+        <a href="#" class="group flex items-center gap-3 bg-white px-4 py-2 rounded-xl border border-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.6)] transition-all duration-300">
+            <!-- Inline SVG Logo Representation matching B2G structure -->
+            <svg class="h-8 w-auto text-emerald-600" viewBox="0 0 180 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Bridge Columns -->
+                <path d="M20 38V18M40 38V12M140 38V12M160 38V18" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+                <!-- Cable Arches -->
+                <path d="M10 38C25 18 35 12 40 12C45 12 55 25 70 38M110 38C125 25 135 12 140 12C145 12 155 18 170 38" stroke="#059669" stroke-width="2.5" stroke-dasharray="3 2"/>
+                <!-- Deck -->
+                <path d="M8 38H172" stroke="#1F2937" stroke-width="4" stroke-linecap="round"/>
+                <!-- Rising Growth Arrow -->
+                <path d="M35 34L85 14L115 26L155 6" stroke="#10B981" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M140 6H155V21" stroke="#10B981" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="flex flex-col border-l border-gray-300 pl-2">
+                <span class="font-syne font-extrabold text-xs tracking-wider text-black leading-tight">BRIDGE THE GROWTH</span>
+                <span class="text-[8px] font-bold tracking-widest text-emerald-700">SEE FURTHER, GROW FASTER.</span>
+            </div>
+        </a>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="badge">Enterprise Digital Growth</div>
-    <h1>Data-Driven Strategies Built to Scale Your Revenue</h1>
-    <p>We connect high-intent marketing with advanced business intelligence. From technical SEO to performance ads, we bridge the gap between traffic and measurable growth.</p>
-    <button class="btn-primary" onclick="openContactModal()">Schedule Strategy Call</button>
-  </section>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8">
+            <a href="#about" class="text-sm font-medium text-gray-400 hover:text-emerald-400 transition-colors">About</a>
+            <a href="#services" class="text-sm font-medium text-gray-400 hover:text-emerald-400 transition-colors">Services</a>
+            <a href="#faqs" class="text-sm font-medium text-gray-400 hover:text-emerald-400 transition-colors">FAQs</a>
+            <button onclick="openModal()" class="text-sm font-semibold text-emerald-400 border border-emerald-500/50 hover:border-emerald-400 px-5 py-2 rounded-lg hover:bg-emerald-500/10 transition-all">
+                Get Started
+            </button>
+        </nav>
 
-  <!-- About Section -->
-  <section class="container" id="about">
-    <div class="about-card">
-      <span class="sub-heading">The Agency Strategy</span>
-      <h2>Engineering Sustainable Revenue Engines</h2>
-      <p>At <strong>Bridge the Growth</strong>, we combine growth marketing precision with full-funnel business data analysis. We don't just generate clicks—we architect complete systems that turn target audiences into long-term enterprise value.</p>
+        <!-- Mobile Menu Toggle Button -->
+        <button id="menu-btn" onclick="toggleMobileMenu()" class="md:hidden text-gray-300 hover:text-white text-xl">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Mobile Navigation Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-[73px] bg-onyx border-b border-onyx-border p-6 flex flex-col gap-4 z-40">
+        <a href="#about" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-emerald-400 text-lg py-2">About</a>
+        <a href="#services" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-emerald-400 text-lg py-2">Services</a>
+        <a href="#faqs" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-emerald-400 text-lg py-2">FAQs</a>
+        <button onclick="openModal(); toggleMobileMenu();" class="w-full text-center bg-emerald-500 text-black font-bold py-3 rounded-lg">
+            Get Started
+        </button>
     </div>
-  </section>
 
-  <!-- Services Grid Section -->
-  <section class="container" id="services">
-    <div class="section-header">
-      <span class="sub-heading">Capabilities</span>
-      <h2>Comprehensive Marketing & Consulting Solutions</h2>
-    </div>
-
-    <div class="grid">
-      <!-- Service 1 -->
-      <article class="card">
-        <div class="card-icon">📈</div>
-        <h3>Search Engine Optimization (SEO)</h3>
-        <p>Dominate high-intent search rankings through deep technical audits, content architecture, keyword mapping, and sustainable organic growth engines.</p>
-      </article>
-
-      <!-- Service 2 -->
-      <article class="card">
-        <div class="card-icon">🎯</div>
-        <h3>Performance Marketing</h3>
-        <p>Full-funnel campaign architectures designed for maximum Return on Ad Spend (ROAS), customer acquisition precision, and scale.</p>
-      </article>
-
-      <!-- Service 3 -->
-      <article class="card">
-        <div class="card-icon">🚀</div>
-        <h3>Google Ads & Meta Ads</h3>
-        <p>Hyper-targeted paid search and dynamic social ad campaigns across Google, Instagram, and Facebook backed by real-time bid optimization.</p>
-      </article>
-
-      <!-- Service 4 -->
-      <article class="card">
-        <div class="card-icon">📲</div>
-        <h3>Social Media Optimization (SMO)</h3>
-        <p>Build platform presence, strengthen brand identity, and cultivate dynamic community engagement across all core social ecosystems.</p>
-      </article>
-
-      <!-- Service 5 -->
-      <article class="card">
-        <div class="card-icon">💼</div>
-        <h3>Business Consulting</h3>
-        <p>Strategic advisory on market expansion, unit economics, conversion funnels, and operational scaling tailored to your business model.</p>
-      </article>
-
-      <!-- Service 6 -->
-      <article class="card">
-        <div class="card-icon">📊</div>
-        <h3>Business Data Analysis</h3>
-        <p>Transform raw analytics into actionable insights. We build custom dashboards, tracking setups, and attribution models for total clarity.</p>
-      </article>
-
-      <!-- Service 7 -->
-      <article class="card">
-        <div class="card-icon">✍️️</div>
-        <h3>Content & Email Marketing</h3>
-        <p>High-converting messaging strategies, multi-stage automated email sequences, and authority content designed to nurture qualified leads.</p>
-      </article>
-
-      <!-- Service 8 -->
-      <article class="card">
-        <div class="card-icon">💻</div>
-        <h3>Web Development</h3>
-        <p>Lightning-fast, ultra-responsive, and conversion-focused websites custom-engineered using modern web standards for maximum impact.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-brand">
-        <div class="logo">Bridge the <span>Growth</span></div>
-        <p>Accelerating business trajectory through intelligent growth engines.</p>
-      </div>
-      <div class="footer-info">
-        <p><strong>Email:</strong> contact@bridgethegrowth.com</p>
-        <p><strong>Location:</strong> Global Operations / Remote Executive Suite</p>
-      </div>
-    </div>
-    <div class="copyright">
-      &copy; 2026 Bridge the Growth. All Rights Reserved.
-    </div>
-  </footer>
-
-  <!-- Floating Persistent CTA Button -->
-  <button class="floating-cta" onclick="openContactModal()" aria-label="Open Action Menu">
-    To Action
-  </button>
-
-  <!-- Contact & Service Request Modal Overlay -->
-  <div class="modal-overlay" id="contactModal">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeContactModal()">&times;</button>
-      <h2>Bridge the Growth</h2>
-      <p class="modal-sub">Select the services you require and send us your project details directly.</p>
-
-      <form onsubmit="handleFormSubmit(event)">
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" id="senderName" required placeholder="Full Name">
+    <!-- HERO SECTION -->
+    <section class="hero-gradient min-h-[85vh] flex flex-col items-center justify-center text-center px-6 lg:px-20 py-20 relative">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-semibold uppercase tracking-widest mb-8">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Enterprise Digital Growth
         </div>
 
-        <div class="form-group">
-          <label>Your Business Email</label>
-          <input type="email" id="senderEmail" required placeholder="name@company.com">
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white max-w-4xl leading-[1.1] mb-6">
+            See Further. <span class="text-emerald-400 text-glow">Grow Faster.</span>
+        </h1>
+
+        <p class="text-gray-400 text-base sm:text-lg max-w-2xl leading-relaxed mb-10">
+            We build data-driven performance engines and scalable digital architectures designed to expand market reach and maximize enterprise value.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+            <button onclick="openModal()" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold px-8 py-4 rounded-xl text-base transition-all transform hover:-translate-y-1 emerald-glow">
+                Accelerate Your Growth
+            </button>
+            <a href="#services" class="w-full sm:w-auto border border-onyx-border hover:border-gray-500 text-gray-300 font-semibold px-8 py-4 rounded-xl text-base transition-all bg-onyx-card">
+                Explore Solutions
+            </a>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="px-6 lg:px-20 py-24 border-t border-onyx-border max-w-7xl mx-auto">
+        <div class="card-gradient rounded-3xl p-8 sm:p-14 border border-onyx-border relative overflow-hidden">
+            <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="text-emerald-400 font-syne font-bold text-xs uppercase tracking-widest mb-3 block">Our Philosophy</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">Bridging the Gap Between Ambition & Market Leadership</h2>
+                <p class="text-gray-400 text-base sm:text-lg leading-relaxed mb-8">
+                    At <span class="text-white font-semibold">Bridge the Growth</span>, we combine high-level business strategy with rigorous digital execution. Modern markets demand more than fragmented marketing campaigns; they require integrated architectures where design, analytics, and performance advertising work seamlessly together.
+                </p>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-6 border-t border-onyx-border">
+                    <div>
+                        <div class="text-2xl sm:text-4xl font-extrabold text-emerald-400 font-syne">10x+</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Average ROAS Yield</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-4xl font-extrabold text-emerald-400 font-syne">$50M+</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Managed Ad Spend</div>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <div class="text-2xl sm:text-4xl font-extrabold text-emerald-400 font-syne">99.4%</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Client Retention</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="px-6 lg:px-20 py-24 border-t border-onyx-border max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-emerald-400 font-syne font-bold text-xs uppercase tracking-widest mb-3 block">Full-Funnel Capabilities</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Enterprise Growth Engine</h2>
         </div>
 
-        <div class="form-group">
-          <label>Select Required Service(s)</label>
-          <select id="serviceSelect" required>
-            <option value="" disabled selected>Choose a primary service...</option>
-            <option value="SEO">Search Engine Optimization (SEO)</option>
-            <option value="Performance Marketing">Performance Marketing</option>
-            <option value="Google & Meta Ads">Google Ads & Meta Ads</option>
-            <option value="SMO">Social Media Optimization (SMO)</option>
-            <option value="Business Consulting">Business Consulting</option>
-            <option value="Data Analysis">Business Data Analysis</option>
-            <option value="Content & Email Marketing">Content & Email Marketing</option>
-            <option value="Web Development">Web Development</option>
-          </select>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Service 1 -->
+            <div class="service-card card-gradient p-7 rounded-2xl border border-onyx-border flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-6">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Search Engine Optimization</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Data-backed technical and semantic SEO strategies designed to secure dominant organic market share.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-onyx-border/50 text-xs text-emerald-400 font-semibold flex items-center gap-1">
+                    Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card card-gradient p-7 rounded-2xl border border-onyx-border flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-6">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Performance Marketing</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Multi-channel user acquisition campaigns engineered to optimize customer acquisition costs (CAC).</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-onyx-border/50 text-xs text-emerald-400 font-semibold flex items-center gap-1">
+                    Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card card-gradient p-7 rounded-2xl border border-onyx-border flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-6">
+                        <i class="fa-solid fa-rectangle-ad"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Google & Meta Ads</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Precision paid advertising models utilizing machine-learning bid strategies for high conversion velocity.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-onyx-border/50 text-xs text-emerald-400 font-semibold flex items-center gap-1">
+                    Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-card card-gradient p-7 rounded-2xl border border-onyx-border flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-6">
+                        <i class="fa-solid fa-hashtag"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Social Media Optimization</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Brand positioning and viral narrative design to establish undeniable category authority on key channels.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-onyx-border/50 text-xs text-emerald-400 font-semibold flex items-center gap-1">
+                    Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-card card-gradient p-7 rounded-2xl border border-onyx-border flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-6">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Business Consulting</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Strategic roadmap advisory for scaling digital infrastructure, monetization pipelines, and operational capacity.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-onyx-border/50 text-xs text-emerald-400 font-semibold flex items-center gap-1">
+                    Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </div>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="service-card card-gradient p-7 rounded-2xl border border-onyx-border flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-6">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Business Data Analytics</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">End-to-end attribution tracking, cohort analysis, and executive dashboarding for predictive decision-making.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-onyx-border/50 text-xs text-emerald-400 font-semibold flex items-center gap-1">
+                    Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </div>
+            </div>
+
+            <!-- Service 7 -->
+            <div class="service-card card-gradient p-7 rounded-2xl border border-onyx-border flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-6">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Content & Email Marketing</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Automated lifecycle nurturing sequences and high-impact editorial content that drive high LTV customer behavior.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-onyx-border/50 text-xs text-emerald-400 font-semibold flex items-center gap-1">
+                    Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </div>
+            </div>
+
+            <!-- Service 8 -->
+            <div class="service-card card-gradient p-7 rounded-2xl border border-onyx-border flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-6">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Web Architecture & Dev</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Ultra-fast, responsive web platforms built with modern web technologies and conversion-focused UX UI.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-onyx-border/50 text-xs text-emerald-400 font-semibold flex items-center gap-1">
+                    Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faqs" class="px-6 lg:px-20 py-24 border-t border-onyx-border max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-emerald-400 font-syne font-bold text-xs uppercase tracking-widest mb-3 block">Got Questions?</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Frequently Asked Questions</h2>
         </div>
 
-        <div class="form-group">
-          <label>Project Overview</label>
-          <textarea id="projectDetails" rows="4" required placeholder="Describe your business goals..."></textarea>
+        <div class="space-y-4">
+            <details class="group border border-onyx-border rounded-xl bg-onyx-card transition-all">
+                <summary class="flex justify-between items-center p-6 text-white font-semibold cursor-pointer list-none select-none">
+                    <span>What makes Bridge the Growth different from standard digital agencies?</span>
+                    <span class="text-emerald-400 transition-transform group-open:rotate-180">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-onyx-border/50 pt-4">
+                    We function as an embedded growth partner rather than a transactional vendor. By unifying business data analytics, performance advertising, and custom web architecture, we focus exclusively on bottom-line revenue metrics rather than vanity engagement indicators.
+                </div>
+            </details>
+
+            <details class="group border border-onyx-border rounded-xl bg-onyx-card transition-all">
+                <summary class="flex justify-between items-center p-6 text-white font-semibold cursor-pointer list-none select-none">
+                    <span>How quickly can we expect measurable performance results?</span>
+                    <span class="text-emerald-400 transition-transform group-open:rotate-180">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-onyx-border/50 pt-4">
+                    Paid advertising and search engine optimization sprints begin showing immediate traffic improvements within 14-30 days. Full funnel economics, cohort optimization, and compounding ROAS yields typically solidify within the 60 to 90-day mark.
+                </div>
+            </details>
+
+            <details class="group border border-onyx-border rounded-xl bg-onyx-card transition-all">
+                <summary class="flex justify-between items-center p-6 text-white font-semibold cursor-pointer list-none select-none">
+                    <span>Do you work with startups or only enterprise businesses?</span>
+                    <span class="text-emerald-400 transition-transform group-open:rotate-180">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-onyx-border/50 pt-4">
+                    We work with high-growth startups, mid-market scaling businesses, and established enterprises. Our core criteria is working with businesses that have a validated offer and are ready to aggressively scale their digital market presence.
+                </div>
+            </details>
+
+            <details class="group border border-onyx-border rounded-xl bg-onyx-card transition-all">
+                <summary class="flex justify-between items-center p-6 text-white font-semibold cursor-pointer list-none select-none">
+                    <span>What is the onboarding process like?</span>
+                    <span class="text-emerald-400 transition-transform group-open:rotate-180">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-onyx-border/50 pt-4">
+                    Upon initiating an engagement through our contact modal, we perform a deep 360-degree audit of your digital ecosystem. We then formulate a custom 90-day growth strategy map and conduct an alignment workshop before campaign launch.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-onyx-border bg-black/80 px-6 lg:px-20 py-16">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
+            <div>
+                <!-- Footer Logo Badge -->
+                <a href="#" class="inline-flex items-center gap-3 bg-white px-3 py-1.5 rounded-lg border border-emerald-500 mb-4">
+                    <svg class="h-6 w-auto text-emerald-600" viewBox="0 0 180 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 38V18M40 38V12M140 38V12M160 38V18" stroke="#059669" stroke-width="3"/>
+                        <path d="M8 38H172" stroke="#1F2937" stroke-width="4"/>
+                        <path d="M35 34L85 14L115 26L155 6" stroke="#10B981" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                    <span class="font-syne font-extrabold text-xs tracking-wider text-black">BRIDGE THE GROWTH</span>
+                </a>
+                <p class="text-gray-400 text-sm max-w-sm">Architecting resilient digital systems and high-yield acquisition funnels for ambitious brands globally.</p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-8 text-sm">
+                <div>
+                    <h4 class="text-white font-bold mb-3 font-syne">Contact</h4>
+                    <p class="text-gray-400">hello@bridgethegrowth.com</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-3 font-syne">Navigation</h4>
+                    <div class="flex flex-col gap-1 text-gray-400">
+                        <a href="#about" class="hover:text-emerald-400">About</a>
+                        <a href="#services" class="hover:text-emerald-400">Services</a>
+                        <a href="#faqs" class="hover:text-emerald-400">FAQs</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <button type="submit" class="btn-primary" style="width: 100%;">Submit & Send Inquiry</button>
-      </form>
+        <div class="max-w-7xl mx-auto border-t border-onyx-border/60 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+            <p>&copy; 2026 Bridge the Growth. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-gray-400">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-400">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING PERSISTENT 'TO ACTION' CTA BUTTON -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <button onclick="openModal()" class="group flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold px-6 py-3.5 rounded-full shadow-[0_0_25px_rgba(16,185,129,0.5)] transition-all transform hover:scale-105 border-2 border-white/20">
+            <span class="text-sm font-syne uppercase tracking-wider">To Action</span>
+            <div class="w-6 h-6 rounded-full bg-black/20 flex items-center justify-center text-xs group-hover:translate-x-0.5 transition-transform">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </button>
     </div>
-  </div>
 
-  <!-- JavaScript for Interactions -->
-  <script>
-    function openContactModal() {
-      document.getElementById('contactModal').classList.add('active');
-    }
+    <!-- CONTACT / GET STARTED MODAL -->
+    <div id="contact-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="modal-animate card-gradient border border-emerald-500/40 rounded-3xl p-8 max-w-lg w-full relative shadow-[0_0_50px_rgba(16,185,129,0.2)]">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
 
-    function closeContactModal() {
-      document.getElementById('contactModal').classList.remove('active');
-    }
+            <span class="text-emerald-400 font-syne font-bold text-xs uppercase tracking-widest mb-2 block">Direct Access</span>
+            <h3 class="text-2xl font-extrabold text-white mb-2">Initiate Growth Strategy</h3>
+            <p class="text-gray-400 text-sm mb-6">Fill out your details below and our senior partners will contact you within 24 hours.</p>
 
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById('senderName').value;
-      const email = document.getElementById('senderEmail').value;
-      const service = document.getElementById('serviceSelect').value;
-      const details = document.getElementById('projectDetails').value;
+            <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-medium text-gray-300 uppercase tracking-wider mb-1">Full Name</label>
+                    <input type="text" required placeholder="John Doe" class="w-full bg-onyx border border-onyx-border focus:border-emerald-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition-colors">
+                </div>
 
-      // Opens default mail client pre-filled with form data
-      const mailtoLink = `mailto:contact@bridgethegrowth.com?subject=Inquiry for ${encodeURIComponent(service)} - ${encodeURIComponent(name)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\nService Selected: " + service + "\n\nDetails:\n" + details)}`;
-      
-      window.location.href = mailtoLink;
-      closeContactModal();
-    }
-  </script>
+                <div>
+                    <label class="block text-xs font-medium text-gray-300 uppercase tracking-wider mb-1">Business Email</label>
+                    <input type="email" required placeholder="john@company.com" class="w-full bg-onyx border border-onyx-border focus:border-emerald-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition-colors">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-gray-300 uppercase tracking-wider mb-1">Target Service</label>
+                    <select required class="w-full bg-onyx border border-onyx-border focus:border-emerald-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition-colors">
+                        <option value="">Select Primary Growth Driver</option>
+                        <option value="seo">Search Engine Optimization</option>
+                        <option value="performance">Performance Marketing</option>
+                        <option value="ads">Google & Meta Ads</option>
+                        <option value="social">Social Media Optimization</option>
+                        <option value="consulting">Business Consulting</option>
+                        <option value="analytics">Business Data Analytics</option>
+                        <option value="email">Content & Email Marketing</option>
+                        <option value="dev">Web Architecture & Dev</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-gray-300 uppercase tracking-wider mb-1">Project Details / Goals</label>
+                    <textarea rows="3" placeholder="Tell us about your current revenue targets or expansion objectives..." class="w-full bg-onyx border border-onyx-border focus:border-emerald-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition-colors"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold py-3.5 rounded-xl text-sm transition-all emerald-glow mt-2">
+                    Submit Strategy Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function openModal() {
+            document.getElementById('contact-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('contact-modal').classList.add('hidden');
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert('Thank you! Your growth strategy request has been submitted. A senior partner will get back to you shortly.');
+            closeModal();
+        }
+
+        // Close modal when clicking outside box
+        window.onclick = function(event) {
+            const modal = document.getElementById('contact-modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
