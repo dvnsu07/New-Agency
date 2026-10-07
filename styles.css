@@ -581,14 +581,3 @@ img {
         scroll-behavior: auto !important;
     }
 }
-/* Enable rotation on the 360 stat item */
-.stat-item .stat-value {
-    display: inline-block;
-    transition: transform 0.8s ease-in-out;
-    transform-origin: center center;
-    will-change: transform;
-}
-
-.stat-item:hover .stat-value {
-    transform: rotate(360deg);
-}
